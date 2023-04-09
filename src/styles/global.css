@@ -10,3 +10,10 @@ a,
   @apply bg-clip-text text-transparent;
   @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
+
+.from-rose{
+  --tw-gradient-from: #f3b1ba;
+  --tw-gradient-to: rgba(243,177,186,0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+
+}

@@ -1,0 +1,56 @@
+---
+import { Picture } from "@astrojs/image/components";
+import ContentSection from "~/components/content-section.astro";
+import pizzaOutsideImage from "~/assets/pizza-outside-1.jpg"
+import pizzaSliceImage from "~/assets/pizza-slice-1.jpg"
+import pizzaCounterImage from "~/assets/pizza-counter-1.jpg"
+
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<ContentSection title="The BEST stop" id="pizza">
+  <Fragment slot="lead">
+    The last and most important stop was eating
+    <span class="text-primary">Pizza</span>. We went to 
+    the most famous shop, <span class="text-primary"> Ray's Pizza </span> in all of
+    <span class="text-primary">New York City</span>! We shared a 
+     <span class="text-primary">very yummy Cheese Slice</span>!!
+  </Fragment>
+  <div class="flex flex-col grid grid-cols-1 gap-2 sm:grid-cols-3 justify-evenly justify-items-center">
+    <div class="sm:w-10/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={pizzaOutsideImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol with Ray's Pizza Sign"
+    />
+    </div>
+
+    <div class="sm:w-10/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={pizzaCounterImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol on glass counter with Pizza's"
+    />
+    </div>
+
+    <div class="sm:w-10/12 sm:self-auto">
+        <Picture
+        class="object-cover w-full h-full"
+        src={pizzaSliceImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="Flat Bristol with slice of Pizza"
+      />
+      </div>
+  
+  </div>
+</ContentSection>

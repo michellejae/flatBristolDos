@@ -1,40 +1,41 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import ContentSection from "~/components/content-section.astro";
-import apartmentImage from "~/assets/apartment-outside.jpg"
+import subwayImage from "~/assets/subway-1.jpg"
 
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<ContentSection title="Home Sweet Home" id="intro">
+<ContentSection title="Choo Choo" id="subway">
   <Fragment slot="lead">
-    We started our day in 
-    <span class="text-primary">Broolkyn</span> at
-    <span class="text-primary">Aunt Michelle's</span>
-    having coffee.
+    Next we got on the
+    <span class="text-primary">subway</span>. Which is a train
+    that travels <span class="text-primary">underground</span> 
+    throughout the city and was <span class="text-primary">built</span> 
+    in <span class="text-primary">1904</span>.
   </Fragment>
   <div class="flex flex-col grid grid-cols-1 gap-2 sm:grid-cols-2 justify-evenly justify-items-center">
     <div class="sm:w-10/12 sm:self-auto">
       <Picture
       class="object-cover w-full h-full"
-      src={apartmentImage}
+      src={subwayImage}
       widths={widths}
       sizes={sizes}
       loading="eager"
-      alt="Aunt Michelle drinking coffee with Flat Bristol"
+      alt="Flat Bristol waiting for NYC Subway"
     />
     </div>
 
     <div class="sm:w-10/12 sm:self-auto">
       <Picture
       class="object-cover w-full h-full"
-      src={apartmentImage}
+      src={subwayImage}
       widths={widths}
       sizes={sizes}
       loading="eager"
-      alt="Flat Bristol outside Aunt Michelle's apartment"
+      alt="Flat Bristol inside NYC Subway"
     />
     </div>
   

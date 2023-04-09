@@ -1,0 +1,44 @@
+---
+import { Picture } from "@astrojs/image/components";
+import ContentSection from "~/components/content-section.astro";
+import brooklynBridgeImage from "~/assets/brooklyn-bridge.jpg";
+import wtcImage from "~/assets/wtc-1.jpg";
+
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<ContentSection title="Our First Stop" id="bkwtc">
+  <Fragment slot="lead">
+    Our first stop was walking across the 
+    <span class="text-primary">Brooklyn Bridge</span> which is
+    <span class="text-primary">154 years old</span>. We walked
+    until we reached <span class="text-primary">One World Trade Center</span> which
+    stands <span class="text-primary">1,776 feet</span>.
+  </Fragment>
+  <div class="flex flex-col grid grid-cols-1 gap-2 sm:grid-cols-2 justify-evenly">
+    <div class="sm:w-10/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={brooklynBridgeImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol at Brooklyn Bridge"
+    />
+    </div>
+
+    <div class="sm:w-10/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={wtcImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol at One World Trade"
+    />
+    </div>
+  
+  </div>
+</ContentSection>

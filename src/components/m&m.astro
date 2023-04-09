@@ -1,0 +1,56 @@
+---
+import { Picture } from "@astrojs/image/components";
+import ContentSection from "~/components/content-section.astro";
+import greenMMImage from "~/assets/m&m-green-1.jpg"
+import wallMMImage from "~/assets/m&m-wall-1.jpg"
+import outsideMMImage from "~/assets/m&m-outside-1.jpg"
+
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<ContentSection title="The Sweet Stop" id="mm">
+  <Fragment slot="lead">
+    We hopped back on the
+    <span class="text-primary">subway</span> to go to
+    the <span class="text-primary">colorful</span> stop at the 
+    <span class="text-primary">M & M's</span>store. We also bought
+    some <span class="text-primary">treats</span> for everyone to enjoy!
+  </Fragment>
+  <div class="flex flex-col grid grid-cols-1 gap-2 sm:grid-cols-3 justify-evenly justify-items-center">
+    <div class="sm:w-10/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={outsideMMImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol outside M&M Store"
+    />
+    </div>
+
+    <div class="sm:w-10/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={wallMMImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol in front of wall of M&M's"
+    />
+    </div>
+
+    <div class="sm:w-10/12 sm:self-auto">
+        <Picture
+        class="object-cover w-full h-full"
+        src={greenMMImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="Flat Bristol with Green M&M"
+      />
+      </div>
+  
+  </div>
+</ContentSection>

@@ -1,0 +1,46 @@
+---
+import { Picture } from "@astrojs/image/components";
+import ContentSection from "~/components/content-section.astro";
+import timesSquareImage from "~/assets/times-square-1.jpg"
+import timesSquareSpaceImage from "~/assets/times-square-3.jpg"
+
+
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<ContentSection title="The Busiest Place" id="times">
+  <Fragment slot="lead">
+    Next we walked to
+    <span class="text-primary">Times Square</span>. It's full of 
+    <span class="text-primary">people</span> from all over the 
+    <span class="text-primary">whole world</span> taking the same photo. And at night
+    it's <span class="text-primary">lit up so bright</span> by the <span class="text-primary">billboards</span>
+    you can see it from <span class="text-primary">space</span>.
+  </Fragment>
+  <div class="flex flex-col grid grid-cols-1 gap-2 sm:grid-cols-2 justify-evenly justify-items-center">
+    <div class="sm:w-8/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={timesSquareImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Flat Bristol at Times Square"
+    />
+    </div>
+
+    <div class="sm:w-8/12 sm:self-auto">
+      <Picture
+      class="object-cover w-full h-full"
+      src={timesSquareSpaceImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt="Times Square at Night from International Space Stations"
+    />
+    </div>
+  
+  </div>
+</ContentSection>
