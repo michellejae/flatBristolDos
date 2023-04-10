@@ -2,6 +2,7 @@
 import { Picture } from "@astrojs/image/components";
 import ContentSection from "~/components/content-section.astro";
 import subwayImage from "~/assets/subway-1.jpg"
+import subwayImageTwo from "~/assets/subway-2.jpg"
 
 
 const widths = [450, 800];
@@ -20,7 +21,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <div class="sm:w-10/12 sm:self-auto">
       <Picture
       class="object-cover w-full h-full"
-      src={subwayImage}
+      src={subwayImageTwo}
       widths={widths}
       sizes={sizes}
       loading="eager"
